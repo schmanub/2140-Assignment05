@@ -14,7 +14,7 @@ class BasicMathFunctions:
         return int(self.a) + int(self.b)
 
     def perform_operation(self, operation):
-        # check if arguements have been passed
+        # check if arguments have been passed
         if self.a is not None and self.b is not None:
             match operation:
                 case "+":
@@ -56,6 +56,7 @@ class BasicMathFunctions:
         try:
             # following code throws an exception if input string doesn't contain only numbers
             # if input contains only numbers it will properly return int or float depending on the input
+            # I am aware of the security risks involved with eval() however for a school project it's fine
             return str(type(eval(self.a))).replace("<class '", "").replace("'>", "")
         except:
             # the input string contains either a mix of letters and numbers or letters
