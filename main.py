@@ -2,7 +2,8 @@
 # EECE-2140 Assignment #05
 
 class BasicMathFunctions:
-    # define init method with variables with default variable so class can be called with only 1 arguement
+    # define init method with variables with default
+    # variable so class can be called with only 1 arguement
     def __init__(self, a, b = None):
         self.a = a
         self.b = b
@@ -33,7 +34,8 @@ class BasicMathFunctions:
 
     def factorial(self):
         output = 1
-        # counts from 2 to the input and multiplies all those numbers
+        # counts from 2 to the input and
+        # multiplies all those numbers
         for i in range(2, self.a+1):
             output *= i
         return output
@@ -44,7 +46,9 @@ class BasicMathFunctions:
 
     def calculate_hypotenuse(self):
         # uses the square function defined in the class earlier
-        return (BasicMathFunctions(self.a).square() + BasicMathFunctions(self.b).square()) ** 0.5
+        square1 = BasicMathFunctions(self.a).square()
+        square2 = BasicMathFunctions(self.b).square()
+        return (square1 + square2) ** 0.5
 
     def rect_area(self):
         return self.a * self.b
@@ -54,9 +58,12 @@ class BasicMathFunctions:
 
     def type_of(self):
         try:
-            # following code throws an exception if input string doesn't contain only numbers
-            # if input contains only numbers it will properly return int or float depending on the input
-            # I am aware of the security risks involved with eval() however for a school project it's fine
+            # following code throws an exception if
+            # input string doesn't contain only numbers
+            # if input contains only numbers it will
+            # properly return int or float depending on the input
+            # I am aware of the security risks involved
+            # with eval() however for a school project it's fine
             return str(type(eval(self.a))).replace("<class '", "").replace("'>", "")
         except:
             # the input string contains either a mix of letters and numbers or letters
